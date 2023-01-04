@@ -14,7 +14,7 @@ public class CharacterFactory {
         switch (characterEntity.getCharacterType()) {
             case WARRIOR:
                 return Warrior.builder()
-                        .nickName(characterEntity.getNickName())
+                        .nickName(characterEntity.getNickname())
                         .mount(characterEntity.getMount())
                         .attackPower(characterEntity.getAttackPower())
                         .defensePower(characterEntity.getDefensePower())
@@ -26,7 +26,7 @@ public class CharacterFactory {
                         .build();
             case HEALER:
                 return Healer.builder()
-                        .nickName(characterEntity.getNickName())
+                        .nickName(characterEntity.getNickname())
                         .pet(characterEntity.getPet())
                         .attackPower(characterEntity.getAttackPower())
                         .defensePower(characterEntity.getDefensePower())
@@ -43,7 +43,7 @@ public class CharacterFactory {
 
     public static CharacterEntity getEntity(Character character) {
         CharacterEntity characterEntity = CharacterEntity.builder()
-                .nickName(character.getNickName())
+                .nickname(character.getNickName())
                 .attackPower(character.getAttackPower())
                 .defensePower(character.getDefensePower())
                 .level(character.getLevel())

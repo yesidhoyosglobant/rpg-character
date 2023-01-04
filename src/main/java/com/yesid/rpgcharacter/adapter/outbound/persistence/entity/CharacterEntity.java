@@ -22,17 +22,23 @@ import javax.persistence.Table;
 public class CharacterEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
-    private String nickName;
+    private String nickname;
     private String gender;
+    @Column(name = "skin_color")
     private String skinColor;
+    @Column(name = "hair_style")
     private String hairStyle;
+    @Column(name = "hair_color")
     private String hairColor;
+    @Column(name = "attack_power")
     private int attackPower;
+    @Column(name = "defense_power")
     private int defensePower;
     private int level;
+    @Column(name = "character_type")
     private CharacterType characterType;
     private String pet;
     private String mount;

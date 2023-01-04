@@ -4,5 +4,5 @@ import com.yesid.rpgcharacter.adapter.outbound.persistence.entity.CharacterEntit
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CharacterRepositoryJpa extends JpaRepository<CharacterEntity, Long> {
-    CharacterEntity findByNickName(String nickName);
+    CharacterEntity findByNickname(String nickName);
 }

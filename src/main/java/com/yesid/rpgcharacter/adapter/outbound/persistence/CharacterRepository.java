@@ -23,7 +23,7 @@ public class CharacterRepository implements CharacterRepositoryProvider {
 
     @Override
     public Character getByNickname(String nickName) {
-        CharacterEntity characterEntity = characterRepositoryJpa.findByNickName(nickName);
+        CharacterEntity characterEntity = characterRepositoryJpa.findByNickname(nickName);
         return CharacterFactory.getCharacter(characterEntity);
     }
 }
