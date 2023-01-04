@@ -1,5 +1,6 @@
 package com.yesid.rpgcharacter.domain.factory;
 
+import com.yesid.rpgcharacter.domain.exception.InvalidCharacterException;
 import com.yesid.rpgcharacter.domain.model.CharacterType;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +22,7 @@ public class CharacterFactoryContext {
             case HEALER:
                 return healerCharacter;
             default:
-                throw new RuntimeException("personaje no valido");
+                throw new InvalidCharacterException("personaje no valido");
         }
     }
 }

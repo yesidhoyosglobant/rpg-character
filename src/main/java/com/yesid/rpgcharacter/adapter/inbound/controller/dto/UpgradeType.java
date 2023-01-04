@@ -1,6 +1,8 @@
 package com.yesid.rpgcharacter.adapter.inbound.controller.dto;
 
 
+import com.yesid.rpgcharacter.domain.exception.InvalidUpgradeException;
+
 public enum UpgradeType {
     NONE("none"),
     ARMOR("armor"),
@@ -18,6 +20,6 @@ public enum UpgradeType {
                 return upgradeType;
             }
         }
-        throw new RuntimeException("Mejora no valida");
+        throw new InvalidUpgradeException("Mejora no valida");
     }
 }

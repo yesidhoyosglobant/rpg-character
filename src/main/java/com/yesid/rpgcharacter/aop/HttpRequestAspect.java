@@ -1,5 +1,6 @@
 package com.yesid.rpgcharacter.aop;
 
+import com.yesid.rpgcharacter.aop.exception.SessionExpiredException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -25,7 +26,7 @@ public class HttpRequestAspect {
 
     private void checkSessionExpiration(String auth) {
         if (expiredSessions.contains(auth)) {
-            throw new RuntimeException("por favor actualice su sesión");
+            throw new SessionExpiredException("Sesión expirada");
         }
     }
 }

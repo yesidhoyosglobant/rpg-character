@@ -1,5 +1,7 @@
 package com.yesid.rpgcharacter.domain.model;
 
+import com.yesid.rpgcharacter.domain.exception.InvalidCharacterException;
+
 public enum CharacterType {
     WARRIOR("warrior"),
     HEALER("healer");
@@ -16,6 +18,6 @@ public enum CharacterType {
                 return characterType;
             }
         }
-        throw new RuntimeException("personaje no valido");
+        throw new InvalidCharacterException("personaje no valido");
     }
 }

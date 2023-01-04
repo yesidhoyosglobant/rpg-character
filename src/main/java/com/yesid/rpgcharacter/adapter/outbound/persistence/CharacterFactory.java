@@ -1,6 +1,7 @@
 package com.yesid.rpgcharacter.adapter.outbound.persistence;
 
 import com.yesid.rpgcharacter.adapter.outbound.persistence.entity.CharacterEntity;
+import com.yesid.rpgcharacter.domain.exception.InvalidCharacterException;
 import com.yesid.rpgcharacter.domain.model.Character;
 import com.yesid.rpgcharacter.domain.model.CharacterType;
 import com.yesid.rpgcharacter.domain.model.Healer;
@@ -37,7 +38,7 @@ public class CharacterFactory {
                         .hairColor(characterEntity.getHairColor())
                         .build();
             default:
-                throw new RuntimeException("clase no valida");
+                throw new InvalidCharacterException("clase no valida");
         }
     }
 

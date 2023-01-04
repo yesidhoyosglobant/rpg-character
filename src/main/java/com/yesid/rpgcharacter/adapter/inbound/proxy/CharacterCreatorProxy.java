@@ -1,6 +1,7 @@
 package com.yesid.rpgcharacter.adapter.inbound.proxy;
 
 import com.yesid.rpgcharacter.domain.CharacterCreator;
+import com.yesid.rpgcharacter.domain.exception.InvalidCharacterException;
 import com.yesid.rpgcharacter.domain.model.Character;
 import com.yesid.rpgcharacter.domain.model.CharacterType;
 import com.yesid.rpgcharacter.domain.usecase.CreateCharacterUseCase;
@@ -24,7 +25,7 @@ public class CharacterCreatorProxy implements CharacterCreator {
     @Override
     public Character create(CharacterType characterType, String nickName) {
         if(bannedNames.contains(nickName.toLowerCase())) {
-            throw new RuntimeException("Nombre de personaje no permitido");
+            throw new InvalidCharacterException("Nombre de personaje no permitido");
         }
         return createCharacterUseCase.create(characterType, nickName);
     }
