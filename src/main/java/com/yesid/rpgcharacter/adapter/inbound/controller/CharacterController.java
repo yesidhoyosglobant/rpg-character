@@ -4,18 +4,20 @@ import com.yesid.rpgcharacter.adapter.inbound.controller.dto.AttackerRequestDto;
 import com.yesid.rpgcharacter.adapter.inbound.controller.dto.CharacterRequestDto;
 import com.yesid.rpgcharacter.adapter.inbound.controller.dto.UpgradeType;
 import com.yesid.rpgcharacter.adapter.inbound.proxy.CharacterCreatorProxy;
-import com.yesid.rpgcharacter.aop.Secured;
+import com.yesid.rpgcharacter.aop.annotation.Secured;
 import com.yesid.rpgcharacter.domain.model.Character;
 import com.yesid.rpgcharacter.domain.model.CharacterType;
 import com.yesid.rpgcharacter.domain.usecase.AttackUseCase;
 import com.yesid.rpgcharacter.domain.usecase.ExportCharacterStyleUseCase;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -33,8 +35,9 @@ public class CharacterController {
         this.attackUseCase = attackUseCase;
     }
 
-    @PostMapping
     @Secured
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Character createCharacter(@RequestHeader(HttpHeaders.AUTHORIZATION) String authorization,
                                      @RequestBody CharacterRequestDto characterRequestDto) {
         CharacterType characterType = CharacterType.valueOfLabel(characterRequestDto.getCharacterType());

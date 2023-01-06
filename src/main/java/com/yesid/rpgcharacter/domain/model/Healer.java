@@ -3,11 +3,13 @@ package com.yesid.rpgcharacter.domain.model;
 import com.yesid.rpgcharacter.domain.visitor.CharacterVisitor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @SuperBuilder
 @Setter
 @Getter
+@ToString(callSuper = true)
 public class Healer extends Character {
 
     private String pet;

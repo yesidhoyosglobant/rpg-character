@@ -3,11 +3,13 @@ package com.yesid.rpgcharacter.domain.model;
 import com.yesid.rpgcharacter.domain.visitor.CharacterVisitor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @SuperBuilder
 @Getter
 @Setter
+@ToString(callSuper = true)
 public class Warrior extends Character {
 
     private String mount;

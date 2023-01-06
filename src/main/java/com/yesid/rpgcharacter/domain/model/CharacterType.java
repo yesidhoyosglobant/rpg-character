@@ -18,6 +18,6 @@ public enum CharacterType {
                 return characterType;
             }
         }
-        throw new InvalidCharacterException("personaje no valido");
+        throw new InvalidCharacterException("clase no valida");
     }
 }

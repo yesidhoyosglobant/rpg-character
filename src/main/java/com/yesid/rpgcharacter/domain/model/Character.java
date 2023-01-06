@@ -1,15 +1,19 @@
 package com.yesid.rpgcharacter.domain.model;
 
 import com.yesid.rpgcharacter.domain.visitor.CharacterVisitor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @SuperBuilder
+@EqualsAndHashCode
+@ToString
 public abstract class Character {
 
     private String nickName;

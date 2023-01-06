@@ -1,4 +1,4 @@
-package com.yesid.rpgcharacter.aop;
+package com.yesid.rpgcharacter.aop.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

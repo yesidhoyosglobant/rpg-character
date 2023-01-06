@@ -22,7 +22,7 @@ public class CharacterFactoryContext {
             case HEALER:
                 return healerCharacter;
             default:
-                throw new InvalidCharacterException("personaje no valido");
+                throw new InvalidCharacterException("clase no valida");
         }
     }
 }
